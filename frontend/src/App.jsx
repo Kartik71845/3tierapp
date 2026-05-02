@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_URL = `http://${window.location.hostname}:5000`;
+const API_URL = import.meta.env.VITE_API_URL
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token') || '');
