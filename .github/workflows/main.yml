@@ -3,6 +3,7 @@ on:
     push:
       branches:
         - main
+        - test
 
 jobs:
   deploy:
@@ -10,7 +11,7 @@ jobs:
 
     steps:
       - name: checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: ssh into ec2
         uses: appleboy/ssh-action@master
@@ -21,6 +22,6 @@ jobs:
           script: |
             cd /home/ubuntu/3tierapp
             git pull origin main
-            docker-compose down
-            docker-compose up -d --build
+            docker compose down
+            docker compose up -d --build
             

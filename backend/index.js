@@ -67,4 +67,4 @@ app.put('/habits/:id', authenticateToken, (req, res) => {
   res.json(habit);
 });
 
-app.listen(5000, () => console.log('Server running on 5000'));
+app.listen(5000, "0.0.0.0", () => console.log('Server running on 5000'));
